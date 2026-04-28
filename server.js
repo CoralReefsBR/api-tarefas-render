@@ -2,6 +2,9 @@ const express = require("express");
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+// Data de criação da API
+const dataCriacaoAPI = "2026-04-28";
+
 // Middleware
 app.use(express.json());
 
@@ -63,7 +66,8 @@ app.delete("/tarefas/:id", (req, res) => {
 app.get("/", (req, res) => {
   res.json({
     status: "\x1b[35mAPI de Tarefas rodando com CI/CD no Render\x1b[0m",
-    versao: "1.0.2",
+    versao: "1.0.3",
+    dataCriacao: dataCriacaoAPI,
     timestamp: new Date().toISOString()
   });
 });
